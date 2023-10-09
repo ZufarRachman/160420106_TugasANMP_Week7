@@ -34,6 +34,7 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         val txtName = holder.itemView.findViewById<TextView>(R.id.txtName)
         val btnDetail = holder.itemView.findViewById<TextView>(R.id.btnDetail)
         val imgPhoto = holder.itemView.findViewById<ImageView>(R.id.imgStudent)
+        val studentID = studentList[position].id
 
         val picasso = Picasso.Builder(holder.itemView.context)
         picasso.listener { picasso, uri, exception ->
@@ -44,7 +45,7 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         txtId.text = studentList[position].id
         txtName.text = studentList[position].name
         btnDetail.setOnClickListener {
-            val action = StudentListFragmentDirections.actionStudentDetail()
+            val action = StudentListFragmentDirections.actionStudentDetail(studentID.toString())
             Navigation.findNavController(it).navigate(action)
         }
     }

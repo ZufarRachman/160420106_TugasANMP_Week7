@@ -49,7 +49,7 @@ class StudentDetailFragment : Fragment() {
         val name = view?.findViewById<TextView>(R.id.txtName)
         val bod = view?.findViewById<TextView>(R.id.txtBoD)
         val phone = view?.findViewById<TextView>(R.id.txtPhone)
-        val imgPhoto = view?.findViewById<ImageView>(R.id.imgStudent)
+        val imgPhoto = view?.findViewById<ImageView>(R.id.imageView3)
         detailView.studentLD.observe(viewLifecycleOwner, Observer { student ->
             id?.setText(student.id)
             name?.setText(student.name)
